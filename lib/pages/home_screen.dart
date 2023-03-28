@@ -10,6 +10,24 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Emergency Hotline'),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return SearchPage();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(FluentSystemIcons.ic_fluent_search_regular),
+          ),
+        ],
+      ),
       backgroundColor: Styles.bgColor,
       body: Center(
           child: Container(

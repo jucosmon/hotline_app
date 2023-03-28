@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hotline_app/pages/category_screen.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:hotline_app/pages/home_screen.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -49,6 +51,20 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Explore Places'),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const HomeScreen();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(FluentSystemIcons.ic_fluent_home_regular),
+          ),
+        ],
       ),
       body: Column(
         children: <Widget>[
@@ -70,20 +86,14 @@ class _SearchPageState extends State<SearchPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CategoryPage()),
+                        MaterialPageRoute(
+                            builder: (context) => const CategoryPage()),
                       );
                     },
                   );
                 },
               ),
             ),
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('Home'),
           ),
         ],
       ),
