@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:hotline_app/pages/category_screen.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -46,7 +48,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cities'),
+        title: const Text('Explore Places'),
       ),
       body: Column(
         children: <Widget>[
@@ -58,22 +60,22 @@ class _SearchPageState extends State<SearchPage> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: filteredCities.length,
-              itemBuilder: (context, index) {
-                final city = filteredCities[index];
-                return ListTile(
-                  title: Text(city),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              CityDetailsPage(cityName: city)),
-                    );
-                  },
-                );
-              },
+            child: CupertinoScrollbar(
+              child: ListView.builder(
+                itemCount: filteredCities.length,
+                itemBuilder: (context, index) {
+                  final city = filteredCities[index];
+                  return ListTile(
+                    title: Text(city),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CategoryPage()),
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
           const SizedBox(height: 10),
@@ -84,43 +86,6 @@ class _SearchPageState extends State<SearchPage> {
             child: const Text('Home'),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class CityDetailsPage extends StatelessWidget {
-  final String cityName;
-
-  CityDetailsPage({required this.cityName});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(cityName),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Details for $cityName'),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SearchPage()));
-              },
-              child: const Text('Explore More Cities'),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Home')),
-          ],
-        ),
       ),
     );
   }
