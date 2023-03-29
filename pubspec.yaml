@@ -38,6 +38,9 @@ dependencies:
   fluentui_icons: ^1.0.0
   gap: ^2.0.0
   provider:
+  clipboard:
+  url_launcher: ^6.0.9
+  flutter_phone_direct_caller: ^2.1.0
 
 dev_dependencies:
   flutter_test:

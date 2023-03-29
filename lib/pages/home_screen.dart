@@ -73,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const Gap(6),
                   Text(
-                    "Explore Places",
+                    "Search Places",
                     style: Styles.headLineStyle4,
                   )
                 ],
