@@ -1,6 +1,7 @@
 import 'package:clipboard/clipboard.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hotline_app/pages/home_screen.dart';
 import 'package:hotline_app/utils/app_style.dart';
 import 'package:gap/gap.dart';
@@ -88,7 +89,14 @@ class _NumbersPageState extends State<NumbersPage> {
                                       const Gap(15),
                                       InkWell(
                                         onTap: () {
-                                          FlutterClipboard.copy(numbers[index]);
+                                          Clipboard.setData(ClipboardData(
+                                                  text: numbers[index]))
+                                              .then((_) {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(const SnackBar(
+                                                    content: Text(
+                                                        "copied to clipboard")));
+                                          });
                                         },
                                         child: const Icon(Icons.copy),
                                       )
