@@ -60,7 +60,7 @@ class _NumbersPageState extends State<NumbersPage> {
                 return Card(
                   child: Padding(
                     padding: const EdgeInsets.only(
-                        top: 32.0, bottom: 32.0, left: 16.0, right: 16.0),
+                        top: 60.0, bottom: 60.0, left: 16.0, right: 16.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -68,7 +68,7 @@ class _NumbersPageState extends State<NumbersPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(name[index], style: Styles.headLineStyle),
-                            const Gap(5),
+                            const Gap(10),
                             Padding(
                               padding: const EdgeInsets.only(left: 40),
                               child: Column(
@@ -78,7 +78,7 @@ class _NumbersPageState extends State<NumbersPage> {
                                     address[index],
                                     style: Styles.headLineStyle4,
                                   ),
-                                  const Gap(5),
+                                  const Gap(20),
                                   Row(
                                     children: [
                                       Text(
@@ -90,7 +90,7 @@ class _NumbersPageState extends State<NumbersPage> {
                                         onTap: () {
                                           FlutterClipboard.copy(numbers[index]);
                                         },
-                                        child: Icon(Icons.copy),
+                                        child: const Icon(Icons.copy),
                                       )
                                     ],
                                   ),
@@ -101,7 +101,7 @@ class _NumbersPageState extends State<NumbersPage> {
                         ),
                         ElevatedButton(
                           onPressed: () {},
-                          child: Text('Call'),
+                          child: const Text('Call'),
                         )
                       ],
                     ),
