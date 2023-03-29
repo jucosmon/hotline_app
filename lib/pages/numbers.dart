@@ -2,6 +2,7 @@ import 'package:clipboard/clipboard.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:hotline_app/pages/home_screen.dart';
 import 'package:hotline_app/utils/app_style.dart';
 import 'package:gap/gap.dart';
@@ -108,7 +109,9 @@ class _NumbersPageState extends State<NumbersPage> {
                           ],
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            FlutterPhoneDirectCaller.callNumber(numbers[index]);
+                          },
                           child: const Text('Call'),
                         )
                       ],
