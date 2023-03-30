@@ -6,9 +6,9 @@ This is an emergency hotline app we prepared for the solution challenge.
 ```
 
 
-# Functionality: This app will provide the user's needed information like hotline numbers and addresses for emergency situations.
+### Functionality: This app will provide the user's needed information like hotline numbers and addresses for emergency situations.
 
-# Goal: Referring to the 17 SDGs, it relates to #11(Sustainable Cities and Communities) and #16(Peace, Jusice and Strong Institutions). Which is to keep our Island(Bohol) safe or even alleviate some damage from any disasters or accidents as well as guiding people to justice and security.
+### Goal: Referring to the 17 SDGs, it relates to #11(Sustainable Cities and Communities) and #16(Peace, Jusice and Strong Institutions). Which is to keep our Island(Bohol) safe or even alleviate some damage from any disasters or accidents as well as guiding people to justice and security.
 
 ## Steps on how to run the code
 
