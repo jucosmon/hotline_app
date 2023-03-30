@@ -290,24 +290,35 @@ class _NumbersPageState extends State<NumbersPage> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(details1[index]["name"].toString(),
-                                style: Styles.headLineStyle),
+                            ConstrainedBox(
+                              constraints: const BoxConstraints(maxWidth: 300),
+                              child: Text(details1[index]["name"].toString(),
+                                  style: Styles.headLineStyle),
+                            ),
                             const Gap(10),
                             Padding(
                               padding: const EdgeInsets.only(left: 40),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    details1[index]["address"].toString(),
-                                    style: Styles.headLineStyle4,
+                                  ConstrainedBox(
+                                    constraints:
+                                        const BoxConstraints(maxWidth: 200),
+                                    child: Text(
+                                      details1[index]["address"].toString(),
+                                      style: Styles.headLineStyle4,
+                                    ),
                                   ),
                                   const Gap(20),
                                   Row(
                                     children: [
-                                      Text(
-                                        details1[index]["number"].toString(),
-                                        style: Styles.numbers,
+                                      ConstrainedBox(
+                                        constraints: const BoxConstraints(
+                                            maxWidth: 200, minWidth: 150),
+                                        child: Text(
+                                          details1[index]["number"].toString(),
+                                          style: Styles.numbers,
+                                        ),
                                       ),
                                       const Gap(15),
                                       InkWell(
