@@ -82,6 +82,46 @@ class _NumbersPageState extends State<NumbersPage> {
         address: '0368 Carlos P. Garcia East Avenue, Tagbilaran City, Bohol',
         number: '(038) 500-8288'),
   ];
+
+  final List<Details> details2 [
+
+    Details(name: 'Albuquerque Police Station', address: 'JX72+7XG, Eastern Poblacion, Alburquerque, Alburquerque, Bohol', number: '6338 539-9149'),
+    Details(name: 'Alicia Police Station', address: 'VCXR+F5J, Bohol Circumferential Rd, Alicia, Bohol', number: '+6338 521-2270'),
+    Details(name: 'Anda Police Station', address: 'PHVG+6GG, Anda, Bohol', number: '+63 920-895-0736'),
+    Details(name: 'Antequera Police Station', address: 'Poblacion, Antequera Bohol Antequera, Philippines', number: '+6338 506-5007'),
+    Details(name: 'Baclayon Police Station', address: 'JWC7+WFM, Baclayon, Bohol', number: '+6338 540-9301'),
+    Details(name: 'Balilihan Police Station', address: 'QX4C+48F, V. Chatto St, Balilihan, 6342 Bohol', number: '0926 989 0606'),
+    Details(name: 'Batuan Police Station', address: 'Q4JW+JVH, Loay Interior Road, Batuan, Bohol', number: '+6338 533-9101'),
+    Details(name: 'Bien Unido Police Station', address: '49W9+CGM, National Road, Bien Unido, 6326 Bohol', number: '+6338 517-2146'),
+    Details(name: 'Bilar Police Station', address: 'P422+QXX, Loay Interior Road, Bilar, Bohol', number: '+6338 535-9076'),
+    Details(name: 'Buenavista Police Station', address: '34J6+PM5, Maximo Leopando St, Buenavista, Bohol', number: '+6338 9134-9127'),
+    Details(name: 'Calape Police Station', address: 'VVVJ+JM4, Calape, Bohol', number: '+6338 507-5000'),
+    Details(name: 'Candijay Police Station', address: 'Poblacion, Candijay, 6312 Bohol', number: '6338 526-0016'),
+    Details(name: 'Carmen Police Station', address: 'R5FX+H5X, Carmen Municipal Hall, Carmen, Carmen, Bohol', number: '+6338 525-9222'),
+    Details(name: 'Catigbian Police Station', address: 'V242+2QF, Catigbian, Bohol', number: '+6338 507-3106'),
+    Details(name: 'TagbilaranPolice Station', address: 'MV37+GV5, Tagbilaran City, Bohol', number: '+6338 411-4325'),
+
+  ];
+
+  final List<Details> details3 = [
+
+    Details(name: 'Albuquerque Fire Rescue', address: 'ABQ Fire Rescue Administration HQ', number: '505-833-7300'),
+    Details(name: 'Alicia Fire Station Bohol', address: 'unknown', number: '0926 035 5305'),
+    Details(name: 'Anda Fire Station Rescue', address: 'Anda, Bohol', number: '+6338 528-2009'),
+    Details(name: 'Antequera Fire Station', address: 'Antequera, Bohol', number: '+6338 506-5007'),
+    Details(name: 'Baclayon Fire Station', address: 'Baclayon, Bohol', number: '540-9280'),
+    Details(name: 'Balilihan Fire Station', address: 'Balilihan, Bohol', number: '09228580197'),
+    Details(name: 'Batuan Fire Station', address: 'Batuan, Bohol', number: '533-9027'),
+    Details(name: 'Bien Unido Fire Station', address: 'Bien Unido, Bohol', number: '09364102138'),
+    Details(name: 'Bilar Fire Station', address: 'Bilar, Bohol', number: '09327717428'),
+    Details(name: 'Buenavista Fire Station', address: 'Buenavista, Bohol', number: '09269033421'),
+    Details(name: 'Calape Fire Station', address: 'Calape, Bohol', number: '507-9023'),
+    Details(name: 'Candijay Fire Station', address: 'Candijay, Bohol', number: '0917-7928300'),
+    Details(name: 'Carmen Fire Station', address: 'Poblacion, Carmen, 6319 Bohol, Philippines', number: '525-9011'),
+    Details(name: 'Catigbian Fire Station', address: 'Catigbian, Bohol', number: '+639177052243'),
+    Details(name: 'BFP R7 Tagbilaran City Fire Station', address: 'E. Calceta Street, Cogon District, Tagbilaran City, Bohol', number: '501-8474'),
+
+  ];
   /* List<String> name = [
     'Dao Police Station',
     'Jagna Local Fire Station',
