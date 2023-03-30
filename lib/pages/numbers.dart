@@ -78,9 +78,9 @@ class _NumbersPageState extends State<NumbersPage> {
         address: 'X279+G2X, Bonbon Barangay Rd, Clarin, Bohol',
         number: '(038) 509 9122'),
     Details(
-        name: 'Sambog Health Center',
-        address: 'MWG4+729, Corella, Bohol',
-        number: '(038) 422-0260/(0939) 741-0779'),
+        name: 'Ace Medical Center Bohol:',
+        address: '0368 Carlos P. Garcia East Avenue, Tagbilaran City, Bohol',
+        number: '(038) 500-8288'),
   ];
   /* List<String> name = [
     'Dao Police Station',
