@@ -73,8 +73,14 @@ class _NumbersPageState extends State<NumbersPage> {
         name: 'CATIGBIAN – MAIN HEALTH CENTER AND LYING IN',
         address: 'POBLACION WESTE, Catigbian, Bohol',
         number: '(038) 416-2326/(0920) 918-1327'),
-    Details(name: 'name', address: 'address', number: 'number'),
-    Details(name: 'name', address: 'address', number: 'number'),
+    Details(
+        name: 'Clarin Community Hospital',
+        address: 'X279+G2X, Bonbon Barangay Rd, Clarin, Bohol',
+        number: '(038) 509 9122'),
+    Details(
+        name: 'Sambog Health Center',
+        address: 'MWG4+729, Corella, Bohol',
+        number: '(038) 422-0260/(0939) 741-0779'),
   ];
   /* List<String> name = [
     'Dao Police Station',
