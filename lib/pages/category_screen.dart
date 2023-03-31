@@ -6,7 +6,8 @@ import 'home_screen.dart';
 import 'numbers.dart';
 
 class CategoryPage extends StatefulWidget {
-  const CategoryPage({super.key});
+  final int selectedPlaceIndex;
+  const CategoryPage({super.key, required this.selectedPlaceIndex});
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();
@@ -56,7 +57,10 @@ class _CategoryPageState extends State<CategoryPage> {
                 itemCount: _category.length,
                 itemBuilder: (context, index) {
                   return MySquare(
-                      imagePath: _imagePath[index], child: _category[index]);
+                    imagePath: _imagePath[index],
+                    child: _category[index],
+                    index: index,
+                  );
                 },
               ),
             ),
@@ -67,12 +71,18 @@ class _CategoryPageState extends State<CategoryPage> {
   }
 }
 
-class MySquare extends StatelessWidget {
+class MySquare extends StatefulWidget {
   final String child;
   final String imagePath;
+  final int index;
 
-  MySquare({required this.child, required this.imagePath});
+  MySquare({required this.child, required this.imagePath, required this.index});
 
+  @override
+  State<MySquare> createState() => _MySquareState();
+}
+
+class _MySquareState extends State<MySquare> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -81,7 +91,9 @@ class MySquare extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => NumbersPage()),
+            MaterialPageRoute(
+                builder: (context) =>
+                    NumbersPage(selectedCategory: widget.child)),
           );
         },
         child: Container(
@@ -90,13 +102,13 @@ class MySquare extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                imagePath,
+                widget.imagePath,
                 height: 100,
               ),
               SizedBox(
                 height: 10,
               ),
-              Text(child),
+              Text(widget.child),
             ],
           ),
           decoration: BoxDecoration(

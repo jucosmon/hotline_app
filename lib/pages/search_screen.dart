@@ -25,39 +25,7 @@ class _SearchPageState extends State<SearchPage> {
     'Candijay',
     'Carmen',
     'Catigbian',
-    'Clarin',
-    'Corella',
-    'Cortes',
-    'Dagohoy',
-    'Danao',
-    'Dauis',
-    'Dimiao',
-    'Garcia Hernandez',
-    'Guindulman',
-    'Inabanga',
-    'Jagna',
-    'Jetafe',
-    'Lila',
-    'Loay',
-    'Loboc',
-    'Loon',
-    'Mabini',
-    'Maribojoc',
-    'Panglao',
-    'Pilar',
-    'Pres. Carlos P. Garcia (Pitogo)',
-    'Sagbayan',
-    'San Isidro',
-    'San Miguel',
-    'Sevilla',
-    'Sierra Bullones',
-    'Sikatuna',
     'Tagbilaran',
-    'Talibon',
-    'Trinidad',
-    'Tubigon',
-    'Ubay',
-    'Valencia',
   ];
   String query = '';
 
@@ -70,6 +38,8 @@ class _SearchPageState extends State<SearchPage> {
   List<String> get filteredCities {
     return cities.where((city) => city.toLowerCase().contains(query)).toList();
   }
+
+  int selectedPlaceIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -108,10 +78,15 @@ class _SearchPageState extends State<SearchPage> {
                   return ListTile(
                     title: Text(city),
                     onTap: () {
+                      setState(() {
+                        selectedPlaceIndex = index;
+                        index; // capture the index when an item is tapped
+                      });
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CategoryPage()),
+                            builder: (context) => CategoryPage(
+                                selectedPlaceIndex: selectedPlaceIndex)),
                       );
                     },
                   );
