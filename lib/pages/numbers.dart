@@ -9,7 +9,9 @@ import 'package:gap/gap.dart';
 
 class NumbersPage extends StatefulWidget {
   final String selectedCategory;
-  const NumbersPage({super.key, required this.selectedCategory});
+  final String selectedPlace;
+  const NumbersPage(
+      {super.key, required this.selectedCategory, required this.selectedPlace});
 
   @override
   State<NumbersPage> createState() => _NumbersPageState();
@@ -321,6 +323,8 @@ class _NumbersPageState extends State<NumbersPage> {
 
   @override
   Widget build(BuildContext context) {
+    List<Map<String, dynamic>> filteredData =
+        category.where((x) => x['cityName'] == widget.selectedPlace).toList();
     return Scaffold(
       appBar: AppBar(
         title: const Text('List of Hotline Numbers'),
@@ -343,7 +347,7 @@ class _NumbersPageState extends State<NumbersPage> {
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: category.length,
+              itemCount: filteredData.length,
               itemBuilder: (BuildContext context, int index) {
                 return Card(
                   child: Padding(
@@ -357,7 +361,8 @@ class _NumbersPageState extends State<NumbersPage> {
                           children: <Widget>[
                             ConstrainedBox(
                               constraints: const BoxConstraints(maxWidth: 300),
-                              child: Text(category[index]["name"].toString(),
+                              child: Text(
+                                  filteredData[index]["name"].toString(),
                                   style: Styles.headLineStyle),
                             ),
                             const Gap(10),
@@ -370,7 +375,7 @@ class _NumbersPageState extends State<NumbersPage> {
                                     constraints:
                                         const BoxConstraints(maxWidth: 200),
                                     child: Text(
-                                      category[index]["address"].toString(),
+                                      filteredData[index]["address"].toString(),
                                       style: Styles.headLineStyle4,
                                     ),
                                   ),
@@ -381,7 +386,8 @@ class _NumbersPageState extends State<NumbersPage> {
                                         constraints: const BoxConstraints(
                                             maxWidth: 200, minWidth: 150),
                                         child: Text(
-                                          category[index]["number"].toString(),
+                                          filteredData[index]["number"]
+                                              .toString(),
                                           style: Styles.numbers,
                                         ),
                                       ),
@@ -389,7 +395,7 @@ class _NumbersPageState extends State<NumbersPage> {
                                       InkWell(
                                         onTap: () {
                                           Clipboard.setData(ClipboardData(
-                                                  text: category[index]
+                                                  text: filteredData[index]
                                                           ["number"]
                                                       .toString()))
                                               .then((_) {
@@ -411,7 +417,7 @@ class _NumbersPageState extends State<NumbersPage> {
                         ElevatedButton(
                           onPressed: () {
                             FlutterPhoneDirectCaller.callNumber(
-                                category[index]["number"].toString());
+                                filteredData[index]["number"].toString());
                           },
                           child: const Text('Call'),
                         )

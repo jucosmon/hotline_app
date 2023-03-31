@@ -6,8 +6,8 @@ import 'home_screen.dart';
 import 'numbers.dart';
 
 class CategoryPage extends StatefulWidget {
-  final int selectedPlaceIndex;
-  const CategoryPage({super.key, required this.selectedPlaceIndex});
+  final String selectedPlace;
+  const CategoryPage({super.key, required this.selectedPlace});
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();
@@ -60,6 +60,7 @@ class _CategoryPageState extends State<CategoryPage> {
                     imagePath: _imagePath[index],
                     child: _category[index],
                     index: index,
+                    selectedPlace: widget.selectedPlace,
                   );
                 },
               ),
@@ -75,8 +76,13 @@ class MySquare extends StatefulWidget {
   final String child;
   final String imagePath;
   final int index;
+  final String selectedPlace;
 
-  MySquare({required this.child, required this.imagePath, required this.index});
+  MySquare(
+      {required this.child,
+      required this.imagePath,
+      required this.index,
+      required this.selectedPlace});
 
   @override
   State<MySquare> createState() => _MySquareState();
@@ -92,8 +98,9 @@ class _MySquareState extends State<MySquare> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) =>
-                    NumbersPage(selectedCategory: widget.child)),
+                builder: (context) => NumbersPage(
+                    selectedCategory: widget.child,
+                    selectedPlace: widget.selectedPlace)),
           );
         },
         child: Container(

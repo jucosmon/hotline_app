@@ -39,8 +39,6 @@ class _SearchPageState extends State<SearchPage> {
     return cities.where((city) => city.toLowerCase().contains(query)).toList();
   }
 
-  int selectedPlaceIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,15 +76,11 @@ class _SearchPageState extends State<SearchPage> {
                   return ListTile(
                     title: Text(city),
                     onTap: () {
-                      setState(() {
-                        selectedPlaceIndex = index;
-                        index; // capture the index when an item is tapped
-                      });
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => CategoryPage(
-                                selectedPlaceIndex: selectedPlaceIndex)),
+                                selectedPlace: filteredCities[index])),
                       );
                     },
                   );
