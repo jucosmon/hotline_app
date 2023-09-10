@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotline_app/pages/category_screen.dart';
 import 'package:hotline_app/pages/home_screen.dart';
-import 'package:hotline_app/pages/numbers.dart';
-import 'package:hotline_app/pages/search_screen.dart';
-import 'package:hotline_app/utils/app_style.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hotline_app/pages/category_screen.dart';
-import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:hotline_app/pages/home_screen.dart';
 
 class SearchPage extends StatefulWidget {
